@@ -1,4 +1,9 @@
 MPSPortal::Application.configure do
+  ENV['consumer-key'] = "3MVG9_7ddP9KqTzePQSiQ20WayUNzpttZNAWmHEMJuvUjMxFhoaX_mni4yJJi.1WQZFJX8aluS0juXyoKLspp"
+  ENV['consumer-secret'] = "7801299740967408651"
+  ENV['consumer-key'] = 'https://localhost:3000'
+
+
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on

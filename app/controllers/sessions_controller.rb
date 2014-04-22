@@ -1,12 +1,8 @@
-class SessionsController < ApplicationController
-  def new
-    raise env["omniauth.auth"].to_yaml
-    session[:access_token] = env["omniauth.auth"]["access_token"]
-    redirect_to root_url, notice: "Signed In!"
-  end
 
-  def destroy
-    session[:access_token] = nil
-    redirect_to root_url, notice: "Signed Out!"
+class SessionsController < ApplicationController
+  def create
+    ENV['sfdc_token'] = request.env['omniauth.auth']['credentials']['token']
+    ENV['sfdc_instance_url'] = request.env['omniauth.auth']['instance_url']
+    raise request.env['omniauth.auth'].to_yaml
   end
 end
